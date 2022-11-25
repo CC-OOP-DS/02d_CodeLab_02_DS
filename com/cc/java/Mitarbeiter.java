@@ -1,13 +1,11 @@
 package com.cc.java;
 
 public class Mitarbeiter {
-    
+
     private String name;
     private String vorname;
     private String funktion;
     private int eintrittsjahr;
-
-
 
     public Mitarbeiter(String name, String vorname, String funktion, int eintrittsjahr) {
         this.name = name;
@@ -16,24 +14,19 @@ public class Mitarbeiter {
         this.eintrittsjahr = eintrittsjahr;
     }
 
+    public String getInfo(String flag) {
+        switch (flag) {
+            case "#name":
+                return vorname + " " + name;
 
+            case "#funktion":
+                return funktion;
 
-public String getInfo(String flag){
-    switch (flag) {
-        case "#name":
-            return name;
+            case "#eintrittsjahr":
+                return Integer.toString(eintrittsjahr);
 
-        case "#vorname":
-            return vorname;
-
-        case "#funktion":
-            return funktion;
-
-        case "#eintrittsjahr":
-            return Integer.toString(eintrittsjahr);
-    
-        default:
-            return "§$%&/ ERROR!";
+            default:
+                return "§$%&/ ERROR!";
+        }
     }
-}
 }
